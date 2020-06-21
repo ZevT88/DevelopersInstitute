@@ -1,0 +1,59 @@
+.whitebox {
+
+		background-color: white;
+		height: 400px;
+		width: 100%;
+		position: fixed; 
+		display: flex;
+		justify-content: space-evenly;
+
+		
+
+
+
+}
+
+.card {
+
+	border: solid white 1px;
+	width: 400px;
+	height: 300px; 
+
+
+
+
+} 
+
+
+
+.toptext { 
+
+		font-size: 35px;
+
+ } 
+
+.btn-light {
+
+
+	width: 100px;
+}
+ 
+
+ .middletext { 
+
+ 	font-size: 15px;
+
+
+  }
+
+
+.bottomtext { 
+
+	font-size: 10px;
+
+ }
+
+
+
+
+
