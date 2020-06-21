@@ -25,12 +25,3 @@ let g = parseInt(number1)
 let number8 = prompt("Another Number")
 let h = parseInt(number2)
 alert(g - h) 
-
-
-
-
-
-
-
- 
- 
