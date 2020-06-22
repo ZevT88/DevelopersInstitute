@@ -2,13 +2,11 @@
 
 // exercise #1
 // let x = 43
-// let y = 23
+// let y = 2
 //  if (x > y)
 //     console.log(x)
 //   else
 //     console.log(y) 
-
-
 
 // exercise #2
 // let newDog = ("Chihuahua")
@@ -39,26 +37,26 @@
 
 
 // exercise4
-// let users = ["Lea123", "Princess45", "cat&doglovers ", "helooo@000 "]
-// let n = prompt("How many people are online?")
-// let online = parseInt(n)
-// if (online == 0) {
-// 	    console.log("There is no one online")
-// } 
-//   else if (online == 1) {
-//           console.log(`${users[0]} is online`)
-//   } 
-//      else if (online == 2) {
-//            console.log(`${users[0]} and ${users[1]} are online`)
+let users = ["Lea123", "Princess45", "cat&doglovers ", "helooo@000 "]
+let n = prompt("How many people are online?")
+let online = parseInt(n)
+if (online == 0) {
+	    console.log("There is no one online")
+} 
+  else if (online == 1) {
+          console.log(`${users[0]} is online`)
+  } 
+     else if (online == 2) {
+           console.log(`${users[0]} and ${users[1]} are online`)
            
-//     } 
+    } 
 
 
-//      else if (online > 2) {
-//           console.log(`${users[0]}, ${users[1]}, and ${online - 2} more are online`)
+     else if (online > 2) {
+          console.log(`${users[0]}, ${users[1]}, and ${online - 2} more are online`)
          
           
-//     }  
+    }  
 
 
 
