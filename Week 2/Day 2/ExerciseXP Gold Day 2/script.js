@@ -56,16 +56,16 @@
 // 			}  
   		
   		
-// Exercise 4 
-let zip = prompt("What is your Zipcode")
-let zipl = zip.length;
-if (zipl < 5 || zipl > 5) { 
-	console.log("Incorrect")
-}
+// // Exercise 4 
+// let zip = prompt("What is your Zipcode")
+// let zipl = zip.length;
+// if (zipl < 5 || zipl > 5) { 
+// 	console.log("Incorrect")
+// }
 
-if(zip.indexOf(' ') >= 0){
-    console.log("Incorrect");
-}
+// if(zip.indexOf(' ') >= 0){
+//     console.log("Incorrect");
+//}
 
 
 
