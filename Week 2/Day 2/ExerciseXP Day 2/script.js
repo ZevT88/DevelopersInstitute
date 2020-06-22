@@ -39,27 +39,26 @@
 
 
 // exercise4
-// let users = ["Lea123 ", "Princess45 ", "cat&doglovers ", "helooo@000 "]
-// let n = prompt("How many people are online?")
-// let online = parseInt(n)
-// if (n == 0) {
-//     console.log("There is no one online")
-// } 
-//   else if (online == 1) {
-//           console.log(users[0])
-//   } 
-//      else if (online == 2) {
-//            console.log(users[0])
-//            console.log(users[1])
-//     } 
+let users = ["Lea123", "Princess45", "cat&doglovers ", "helooo@000 "]
+let n = prompt("How many people are online?")
+let online = parseInt(n)
+if (online == 0) {
+	    console.log("There is no one online")
+} 
+  else if (online == 1) {
+          console.log(`${users[0]} is online`)
+  } 
+     else if (online == 2) {
+           console.log(`${users[0]} and ${users[1]} are online`)
+           
+    } 
 
 
-//      else if (online > 2) {
-//           console.log(users[0])
-//           console.log(users[1])
-//           console.log(`And there is  ${online - 2} more online`) 
+     else if (online > 2) {
+          console.log(`${users[0]}, ${users[1]}, and ${online - 2} more are online`)
+         
           
-//     }  
+    }  
 
 
 
