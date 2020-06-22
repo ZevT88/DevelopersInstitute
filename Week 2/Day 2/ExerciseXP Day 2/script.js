@@ -31,9 +31,9 @@
 // let number = prompt("A number")
 // let value = parseInt(number)
 //   if (value%2 == 0)
-//     console.log("The Number is Even")
+//     console.log(`The Number ${number} is Even`)
 //   else
-//     console.log("The Number is not even") 
+//     console.log(`The Number ${number} is not even`) 
 
 
 
