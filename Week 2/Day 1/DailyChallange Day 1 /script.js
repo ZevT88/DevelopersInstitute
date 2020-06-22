@@ -9,10 +9,7 @@ console.log(fruits)
 
 
 
-
 let fruits2 = ["Banana", ["Apples", ["Oranges"], "Blueberries"]];
-
-
 
 console.log(fruits2[1][1])
 
