@@ -1,9 +1,10 @@
-let str1 = "the cake is not so bad!" 
+
+
+let str1 = prompt("A sentance with not and bad in it")
 
 
 let not1 = str1.indexOf("not")
 let bad1 = str1.indexOf("bad")
-
 
 
 if (not1 > -1 && bad1 > -1 && bad1 > not1 ) { 
