@@ -55,11 +55,44 @@
 // } while (ask < 11);
    
 // Exercise #4 
-let people = ["Greg", "Mary", "Devon", "James"] 
-for (let person of people) { 
+// let people = ["Greg", "Devon", "Mary", "James"] 
+// // people.shift()
+// people.splice(1, 1,"Jason")
+// // people.push("Zev")
+// // for (let person of people) { 
 
-      console.log(person)
+// //       console.log(person)
 
-}
-let people1 = people.splice(0, "")
-console.log(people1)
+// // } 
+// // for (let person of people) { 
+// //    if (person == "Mary") {
+// //       console.log(person)
+// //          break;
+// //    }
+// //    console.log(person)
+// // } 
+// people.splice(1, 1)
+// people.splice(2,1 )
+// let people1 = people.slice(0, 3) 
+// console.log(people1)
+
+//Exercise 5 
+// let age = [20,105,12,43,98,55]; 
+// let sum = ""
+// let finalsum = 0
+// for (let i of age) { 
+   
+//    let sum = i
+//    finalsum = finalsum + sum
+//    console.log(finalsum)
+
+// }
+// for (let i of age) { 
+      
+//    let a = parseInt(i)
+//       if (a%2 == 1)
+//       continue;
+//       console.log(a)
+// } 
+
+
