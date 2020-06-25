@@ -44,7 +44,7 @@
 
 // }  
 
-//Exercise #1  
+//Exercise #5
 
 function hotel_price (days) {
         finalhotel = days * 140
