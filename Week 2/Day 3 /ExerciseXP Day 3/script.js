@@ -1,5 +1,5 @@
      
-// //Exercise #1
+//Exercise #1
 // let favs = [" blue", " green", " yellow", " purple"]
 //      if (color = favs[0]) { 
 
@@ -77,16 +77,16 @@
 // console.log(people1)
 
 //Exercise 5 
-// let age = [20,105,12,43,98,55]; 
-// let sum = ""
-// let finalsum = 0
-// for (let i of age) { 
+let age = [20,105,12,43,98,55]; 
+let sum = ""
+let finalsum = 0
+for (let i of age) { 
    
-//    let sum = i
-//    finalsum = finalsum + sum
-//    console.log(finalsum)
+   let sum = i
+   finalsum = finalsum + sum
+   console.log(finalsum)
 
-// }
+}
 // for (let i of age) { 
       
 //    let a = parseInt(i)
