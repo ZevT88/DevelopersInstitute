@@ -1,13 +1,11 @@
-
-let array = [ 
-    
-
+let img = document.createElement("IMG")
+let array = [
 
 
     book1 = { 
         title : "The Magicians",
         auther : "Lev Grossman",
-        image : "", 
+        image : document.getElementsByName("img"),
         alreadyRead : true
     },
 
