@@ -1,0 +1,73 @@
+
+body { 
+
+    background-color: yellowgreen;
+}
+
+button { 
+   height: 150px;
+   width: 250px;
+   background-color: red;
+   color: red;
+   border: solid yellowgreen 7px;
+   font-size: 50px;
+   border-radius: 15%;
+   outline: none;
+   transition: all 300ms; 
+     
+} 
+
+
+button:hover { 
+    transform: scale(1.03);
+}
+
+
+.win { 
+
+    font-size: 145px;
+    display: flex;
+    justify-content: center;
+    margin-top: 300px;
+    color: blue; 
+} 
+
+
+
+.again { 
+    background-color:  green; 
+    color: yellow; 
+    display: flex;
+}
+
+
+.answer { 
+        height: 55px;
+        width: 75px;
+        border-radius: 20%;
+        background-color: blue;
+        color: red; 
+        font-size: 15px;
+        display: flex; 
+
+} 
+
+
+.shuffle  {
+    height: 55px;
+    width: 75px;
+    border-radius: 20%;
+    background-color: blue;
+    color: red; 
+    font-size: 15px;
+    display: flex; 
+
+
+} 
+
+
+h3 { 
+    font-size: 30px; 
+    color: blue; 
+    margin-top: 75px;
+}
