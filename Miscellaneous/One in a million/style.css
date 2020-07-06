@@ -1,0 +1,65 @@
+.rainbow-text {
+    background-image: linear-gradient(to left, blue, green, red, blue, green, red);   -webkit-background-clip: text;
+    color: transparent;
+  }
+
+.rainbow-text2 {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+    color: transparent;
+  }
+body { 
+        background-color: white;
+}
+ 
+h1 { 
+
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    font-size: 75px;
+}
+.buttons { 
+
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+button { 
+    height: 40px;
+    width: 100px; 
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    border-radius: 15%;
+} 
+ 
+.btn1 { 
+    background-color: green;
+}
+ 
+.btn2 { 
+    background-color: yellow;
+}
+
+.btn3  { 
+    background-color: violet;
+} 
+
+.btn4 { 
+    background-color: blue;
+} 
+
+.btn5 { 
+    background-color: coral;
+} 
+
+.btn6 { 
+    background-color: crimson;
+} 
+
+
+
+

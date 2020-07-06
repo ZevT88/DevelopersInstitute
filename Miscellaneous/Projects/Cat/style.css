@@ -1,0 +1,28 @@
+.class1 {
+	display: flex;
+justify-content: center;
+
+} 
+
+
+.class2 {
+	display: flex;
+	justify-content: center;
+} 
+
+
+.word1 { 
+
+	margin-right: 200px;
+
+
+ } 
+
+
+ .paragraph { 
+
+
+ 	width: 400px;
+ 	display: flex;
+    margin-right: 40px;
+  }
