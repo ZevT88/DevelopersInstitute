@@ -63,13 +63,18 @@
 
 
 #Exercise #7 
-# names = ["bob", "joe", "fred", "jeff"] 
-# for name in names:
+# names = ["bob", "joe", "fred", "jeff", "Chaim"] 
+# names2 = ["bob", "joe", "fred", "jeff", "Chaim"]
+# for name  in names:
 #     age = input(f"what is {name}'s age?   ") 
-#     if int(age) < 17: 
-#         names.remove(f"{name}")  
+#     if int(age) <= 16: 
+#         names2.remove(f"{name}")  
     
-# print(names) 
+# print(names2) 
+
+
+
+
 
 
 #Exercise #8 
