@@ -2,6 +2,7 @@ letters = ["a","b","c","d","e", "f", "g","h","i","j","k","l","m", "n","o", "p", 
 ask = input('Please type "E" to Encrypt and "D" to Decrypt: ') 
 encrypt = []
 decrypt = []
+num = 0
 if ask == "E":
     ask2 = input("what do you want to Encrypt?  ")
     for letter in ask2: 
@@ -10,12 +11,12 @@ if ask == "E":
             encrypt.append(letters[a + 3])
         else:
             a = letters.index(letter)
-            encrypt.append(letters[a - 3]) 
-       
+            encrypt.append(letters[num]) 
+            num = num + 1
 
     print(encrypt) 
 
-
+num2 = 17
 if ask == "D":
     ask2 = input("what do you want to Decrypt?  ")
     for letter in ask2: 
@@ -24,9 +25,8 @@ if ask == "D":
             encrypt.append(letters[a - 3]) 
         else:
             a = letters.index(letter)
-            encrypt.append(letters[a + 3]) 
-       
-
+            encrypt.append(letters[num2]) 
+            num2 = num2 + 1
+    
     print(encrypt) 
-
 
