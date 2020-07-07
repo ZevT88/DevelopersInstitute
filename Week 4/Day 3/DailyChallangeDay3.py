@@ -14,7 +14,7 @@ if ask == "E":
             encrypt.append(letters[num]) 
             num = num + 1
 
-    print(encrypt) 
+    print("".join(encrypt))
 
 num2 = 17
 if ask == "D":
@@ -22,11 +22,11 @@ if ask == "D":
     for letter in ask2: 
         if letter != "u" and letter != "v" and letter != "w":
             a = letters.index(letter)
-            encrypt.append(letters[a - 3]) 
+            decrypt.append(letters[a - 3]) 
         else:
             a = letters.index(letter)
-            encrypt.append(letters[num2]) 
+            decrypt.append(letters[num2]) 
             num2 = num2 + 1
     
-    print(encrypt) 
+    print("".join(decrypt))
 
