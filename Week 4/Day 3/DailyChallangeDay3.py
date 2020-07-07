@@ -6,9 +6,11 @@ num = 0
 if ask == "E":
     ask2 = input("what do you want to Encrypt?  ")
     for letter in ask2: 
-        if letter != "x" and letter != "y" and letter != "z":
+        if letter != "x" and letter != "y" and letter != "z" and letter != " ":
             a = letters.index(letter)
             encrypt.append(letters[a + 3])
+        elif letter == " ": 
+            encrypt.append(" ")
         else:
             a = letters.index(letter)
             encrypt.append(letters[num]) 
@@ -20,9 +22,11 @@ num2 = 17
 if ask == "D":
     ask2 = input("what do you want to Decrypt?  ")
     for letter in ask2: 
-        if letter != "u" and letter != "v" and letter != "w":
+        if letter != "u" and letter != "v" and letter != "w" and letter != " ":
             a = letters.index(letter)
             decrypt.append(letters[a - 3]) 
+        elif letter == " ": 
+            decrypt.append(" ") 
         else:
             a = letters.index(letter)
             decrypt.append(letters[num2]) 
