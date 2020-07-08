@@ -6,7 +6,7 @@ year1 = int(input("What is the Year you where born?  "))
 month1 = int(input("What is the Month you where born?  ")) 
 day1 = int(input("What is the Day you where born?  "))
 mytuple =  (year1, month1,day1)
-a, b, c = mytuple
+a, b, c = mytuple 
 def calculateAge(birthDate): 
     today = date.today() 
     age = today.year - birthDate.year - ((today.month, today.day) < (birthDate.month, birthDate.day)) 
