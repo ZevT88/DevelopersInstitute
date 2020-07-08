@@ -1,9 +1,9 @@
 letters = ["a","b","c","d","e", "f", "g","h","i","j","k","l","m", "n","o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y","z"] 
-ask = input('Please type "E" to Encrypt and "D" to Decrypt: ') 
+ask = input('Please type "e" to Encrypt and "d" to Decrypt: ') 
 encrypt = []
 decrypt = []
 num = 0
-if ask == "E":
+if ask == "e":
     ask2 = input("what do you want to Encrypt?  ")
     for letter in ask2: 
         if letter != "x" and letter != "y" and letter != "z" and letter != " ":
@@ -19,7 +19,7 @@ if ask == "E":
     print("".join(encrypt))
 
 num2 = 17
-if ask == "D":
+if ask == "d":
     ask2 = input("what do you want to Decrypt?  ")
     for letter in ask2: 
         if letter != "u" and letter != "v" and letter != "w" and letter != " ":
