@@ -22,7 +22,7 @@ class Farm():
     def get_short_info(self):
         once = set(self.animals)
         once2 = list(once)
-        print(f"In {self.farm_name}'s farm there is {once2[0]}s, {once2[1]}, and {once2}s")
+        print(f"In {self.farm_name}'s farm there is {once2[0]}s, {once2[1]}, and {once2[2]}s")
 
         
 macdonald = Farm("Mcdonald") 
