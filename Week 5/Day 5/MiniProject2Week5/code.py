@@ -13,11 +13,6 @@ class AnagramChecker():
             self.allwords.append(line.strip()) 
 
 
-    def is_valid_word(self,word): 
-        if word in self.allwords: 
-            print("This is a valid English word")
-        else: 
-            print("This is not a valid English word")
 
     def get_anagrams(self, word):  
         anagrams = []
@@ -27,10 +22,13 @@ class AnagramChecker():
             if perm in self.allwords: 
                 anagrams.append(perm) 
         
-        anagrams.pop(0)
         
         print(f'YOUR WORD: "{word}"')
-        anagram.is_valid_word(word) 
+        if word in self.allwords: 
+            anagrams.pop(0)
+            print("This is a valid English word")
+        else: 
+            print("This is not a valid English word")
         print(f"Anagrams for your word: {', '.join(anagrams)}")
 
 
