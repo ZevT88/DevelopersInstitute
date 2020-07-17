@@ -1,92 +1,40 @@
-import random
-class RockPaperScissors(): 
+def all_perms(elements):
+    if len(elements) <=1:
+        yield elements
+    else:
+        for perm in all_perms(elements[1:]):
+            for i in range(len(elements)):
+                yield perm[:i] + elements[0:1] + perm[i:]
+
+class AnagramChecker(): 
     def __init__(self): 
-        self.wins = 0 
-        self.losses = 0 
-        self.draws = 0
+        self.allwords = [] 
+        for line in open('Anagrams.txt'):
+            self.allwords.append(line.strip()) 
 
-    def rock(self):  
-        rand = random.choice(["r", "p", "s"])  
-        if rand == "r": 
-            print("Its a draw!") 
-            self.draws += 1 
-            mainmenu()
-        elif rand == "p": 
-            print("Computer chose Paper. You lost")
-            self.losses += 1
-            mainmenu()
+
+    def is_valid_word(self,word): 
+        if word in self.allwords: 
+            print("This is a valid English word")
         else: 
-            print("The computer chose Scissors, You win!") 
-            self.wins += 1
-            mainmenu()
+            print("This is not a valid English word")
 
-    def paper(self):  
-        rand = random.choice(["r", "p", "s"])  
-        if rand == "r": 
-            print("Computer chose Rock, You Win") 
-            self.wins += 1 
-            mainmenu()
-        elif rand == "p": 
-            print("Its a Draw!")
-            self.draws += 1 
-            mainmenu()
-        else: 
-            print("The computer chose Scissors, You Lost!") 
-            self.losses += 1
-            mainmenu()
+    def get_anagrams(self, word):  
+        anagrams = []
+        word_perms = list(all_perms(f"{word}"))  
 
-    def scissors(self):  
-        rand = random.choice(["r", "p", "s"])  
-        if rand == "r": 
-            print("Computer chose Rock, You Lost") 
-            self.losses += 1 
-            mainmenu()
-        elif rand == "p": 
-            print("Computer chose Paper, you Win!")
-            self.wins += 1 
-            mainmenu()
-        else: 
-            print("Its a Draw!") 
-            self.draws += 1
-            mainmenu()
-
-    
-    
-    def showresults(self):
-        print("    Game Results:")
-        print(f"    You Won {self.wins} times!") 
-        print(f"    You Lost {self.losses} times!")
-        print(f"    You Drew {self.draws} times!") 
-        print("                                 ")
-        print("                                 ")
-        print("    Thank you for Playing!")
+        for perm in word_perms: 
+            if perm in self.allwords: 
+                anagrams.append(perm) 
+        
+        anagrams.pop(0)
+        
+        print(f'YOUR WORD: "{word}"')
+        anagram.is_valid_word(word) 
+        print(f"Anagrams for your word: {', '.join(anagrams)}")
 
 
+  
 
-
-
-game = RockPaperScissors()
-
-def playgame(): 
-    move = input("Select (r)ock, (p)aper, or (s)cissors:   ") 
-    if move == "r": 
-        game.rock() 
-    elif move == "p": 
-        game.paper()
-    elif move == "s": 
-        game.scissors() 
-    else: 
-        print("Error") 
-        playgame()
-
-def mainmenu():
-    print("   Menu")
-    choose = input("   (g) Play a new Game\n   (x) Show scores and exit\n           :  ")  
-    if choose == "g": 
-        playgame() 
-    elif choose == "x": 
-        game.showresults()
-
-
-
-mainmenu()
+anagram = AnagramChecker() 
+anagram.get_anagrams("MEAT") 
