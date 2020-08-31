@@ -9,6 +9,7 @@ from tk_html_widgets import HTMLLabel
 import markdown
 
 
+
 class Data(): 
 
 	#Changes the Font for the whole app
@@ -17,7 +18,7 @@ class Data():
 
 	#get list of users in database
 	def UserList():
-		conn = sqlite3.connect('Final_ProjectENV/NotesProject_Root/Notes_Database.db')
+		conn = sqlite3.connect('Notes_Database.db')
 
 		c = conn.cursor()
 		c.execute("SELECT *,oid FROM users") 
@@ -34,7 +35,7 @@ class Data():
 
 	#get list of Notes in database
 	def NoteList():
-		conn = sqlite3.connect('Final_ProjectENV/NotesProject_Root/Notes_Database.db')
+		conn = sqlite3.connect('Notes_Database.db')
 
 		c = conn.cursor()
 		c.execute("SELECT *,oid FROM NOTES") 
@@ -49,7 +50,7 @@ class Data():
 		return Notelist  
 
 	def GetRecords(): 
-		conn = sqlite3.connect('Final_ProjectENV/NotesProject_Root/Notes_Database.db')
+		conn = sqlite3.connect('Notes_Database.db')
 		c = conn.cursor()
 		c.execute("SELECT *,oid FROM users")  
 		records = c.fetchall()  
@@ -65,7 +66,7 @@ class Data():
 
 
 	def ResetUsers(): 
-		conn = sqlite3.connect('Final_ProjectENV/NotesProject_Root/Notes_Database.db')
+		conn = sqlite3.connect('Notes_Database.db')
 		c = conn.cursor()
 		c.execute("DELETE FROM users")  
 		records = c.fetchall()  
@@ -73,7 +74,7 @@ class Data():
 		conn.close()  
 	#Resets all Notes Info in Database
 	def ResetNotes(): 
-		conn = sqlite3.connect('Final_ProjectENV/NotesProject_Root/Notes_Database.db')
+		conn = sqlite3.connect('Notes_Database.db')
 		c = conn.cursor()
 		c.execute("DELETE FROM NOTES")  
 		records = c.fetchall()  
@@ -83,7 +84,7 @@ class Data():
 	#Adds New user when Signing up
 	def AddUser(Name, PasswordValue): 
 
-		conn = sqlite3.connect('Final_ProjectENV/NotesProject_Root/Notes_Database.db')
+		conn = sqlite3.connect('Notes_Database.db')
 
 		c = conn.cursor()
 
@@ -101,7 +102,7 @@ class Data():
 		conn.close   
 	#Add new note when creating note
 	def AddNote(Name, Title): 	
-			conn = sqlite3.connect('Final_ProjectENV/NotesProject_Root/Notes_Database.db')
+			conn = sqlite3.connect('Notes_Database.db')
 
 			c = conn.cursor()
 
@@ -120,7 +121,7 @@ class Data():
 
 	#Deletes Notes From Database
 	def DeleteNote(Name,Title):  
-		conn = sqlite3.connect('Final_ProjectENV/NotesProject_Root/Notes_Database.db')
+		conn = sqlite3.connect('Notes_Database.db')
 
 		c = conn.cursor()
 
@@ -136,7 +137,7 @@ class Data():
 		conn.commit()
 		conn.close   
 
-
+	
 	#Views Note from Database
 	def ViewNote(Name, NoteTitle): 
 		root = Tk() 
@@ -154,7 +155,7 @@ class Data():
 		def Save(Name,NoteTitle): 
 			TextValue = EditBox.get("1.0", 'end')
 
-			conn = sqlite3.connect('Final_ProjectENV/NotesProject_Root/Notes_Database.db')
+			conn = sqlite3.connect('Notes_Database.db')
 
 			c = conn.cursor()
 
@@ -170,7 +171,6 @@ class Data():
 
 			conn.commit()
 
-			ShowBox = HTMLLabel(ShowBoxFrame, html=markdown.markdown(MainNote), width=100, height=50)
 			root.destroy()
 			Data.ViewNote(Name, NoteTitle)
 
@@ -187,14 +187,21 @@ class Data():
 				Pages.Home(Name)
 		DeleteButton = Button(myframe1, text="Delete", font=myFont2, command= lambda: DeleteButtonFunc(Name, NoteTitle))
 		DeleteButton.grid(row=0,column=3)
-		def Share():  
+		def Share(): 
 			NoteID = []
 			for note in Data.NoteList(): 
 				if note[1] == NoteTitle: 
 					NoteID.append(note[3]) 
+
 			NoteValue = NoteID[0] * 187 * 72 
-			messagebox.showinfo("Note Link", "http://127.0.0.1:8000/note/" + f"{NoteValue}")
 			
+			os.system(f"touch file.md")
+			with open(f"file.md", "r+") as file:
+				file.write(f"{EditBox.get('1.0', 'end')}") 
+			os.system("open file.md") 
+			time.sleep(5)
+			os.system("rm file.md")
+		
 		ShareButton = Button(myframe1, text="Share", font=myFont2, command=Share)
 		ShareButton.grid(row=0, column=4)
 		BackButton = Button(myframe1, text="Back", font=myFont2, command= lambda: Back(Name))
@@ -224,6 +231,7 @@ class Data():
 		
 		EditBox.insert(END, f"{MainNote}")	
 
+
 		html = markdown.markdown(MainNote).replace("<p>", "<p style='font-size:20px;'>")
 		html2 = html.replace("<h1>", "<h1 style='font-size: 60px'>")
 		html3 = html2.replace("<h2>", "<h2 style='font-size: 40px'>")
@@ -238,15 +246,11 @@ class Data():
 		mainloop()
 
 
-	
-
-
-
 
 
 	def EditPassword(Name, NewPassword): 
 
-			conn = sqlite3.connect('Final_ProjectENV/NotesProject_Root/Notes_Database.db')
+			conn = sqlite3.connect('Notes_Database.db')
 
 			c = conn.cursor()
 
@@ -266,7 +270,7 @@ class Data():
 
 	def RemoveAccount(Name): 
 
-			conn = sqlite3.connect('Final_ProjectENV/NotesProject_Root/Notes_Database.db')
+			conn = sqlite3.connect('Notes_Database.db')
 
 			c = conn.cursor()
 
@@ -302,7 +306,7 @@ class Pages():
 	def signUp(): 
 		root = Tk() 
 		root .title("Sign Up") 
-		root .geometry("1600x800") 
+		root .geometry("1600x1000") 
 
 		def submit(Name):   
 
@@ -366,11 +370,11 @@ class Pages():
 	def LogIn(): 
 		LoginPage = Tk() 
 		LoginPage .title("Log In") 
-		LoginPage .geometry("1600x800") 
+		LoginPage .geometry("1600x1000") 
 
 		#check if password matches password for user in database
 		def  VarifyUser(Name, Password):   
-			conn = sqlite3.connect('Final_ProjectENV/NotesProject_Root/Notes_Database.db')
+			conn = sqlite3.connect('Notes_Database.db')
 
 			c = conn.cursor()
 			NameValue = str(Name)
@@ -462,7 +466,7 @@ class Pages():
 	def Home(Name): 
 		root = Tk() 
 		root .title("Home") 
-		root .geometry("1600x800") 
+		root .geometry("1600x1000") 
 
 		myFont = font.Font(family=f"{Data.Font()}" , size = 75)
 		myFont2 = font.Font(family=f"{Data.Font()}" , size = 45)
@@ -522,7 +526,7 @@ class Pages():
 	def MyAccount(Name): 
 		root = Tk() 
 		root .title("My Account") 
-		root .geometry("1600x800") 
+		root .geometry("1600x1000") 
 
 		myFont = font.Font(family=f"{Data.Font()}" , size = 100)
 		myFont2 = font.Font(family=f"{Data.Font()}" , size = 45)
@@ -575,7 +579,6 @@ class Pages():
 		SpaceFrame3.pack() 
 		def DeleteAccount(): 
 			Question = messagebox.askyesno("Confirm", "Are you sure you want to delete you account? All your notes will be deleted.")
-			print(Question) 
 			if Question == True:  
 				Data.RemoveAccount(Name)
 				root.destroy()
@@ -592,7 +595,7 @@ class Pages():
 	def ChangePassword(Name): 
 		root = Tk() 
 		root .title("My Account") 
-		root .geometry("1600x800") 
+		root .geometry("1600x1000") 
 		myFont = font.Font(family=f"{Data.Font()}" , size = 75)
 		myFont2 = font.Font(family=f"{Data.Font()}" , size = 17) 
 		myFont3 = font.Font(family=f"{Data.Font()}" , size = 17) 
@@ -640,7 +643,7 @@ class Pages():
 	def CreateNote(Name): 
 		root = Tk() 
 		root .title("Create Note") 
-		root .geometry("1600x800") 
+		root .geometry("1600x1000") 
 
 		myFont = font.Font(family=f"{Data.Font()}" , size = 75) 
 		myFont2 = font.Font(family=f"{Data.Font()}" , size = 15) 
@@ -680,7 +683,7 @@ class Pages():
 	def MyNotes(Name): 
 		root = Tk() 
 		root .title("Home") 
-		root .geometry("1600x800") 
+		root .geometry("1600x1000") 
 		myFont = font.Font(family=f"{Data.Font()}" , size = 75)
 		myFont2 = font.Font(family=f"{Data.Font()}" , size = 45) 
 		myFont3 = font.Font(family=f"{Data.Font()}", size= 25)
@@ -717,7 +720,7 @@ class Main():
 	def Start(): 
 		root1 = Tk() 
 		root1.title("Simple Note Taker") 
-		root1.geometry("1600x800") 
+		root1.geometry("1600x1000") 
 
 		myFont = font.Font(family=f"{Data.Font()}" , size = 75)
 		myFont2 = font.Font(family=f"{Data.Font()}" , size = 20)
@@ -751,6 +754,5 @@ if FileVariable == "Off":
 	Main.Start() 
 else: 
 	Pages.Home(FileVariable)
-
 
 
