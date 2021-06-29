@@ -1,0 +1,16 @@
+5 + "34" = error
+5 - "4" = error
+10 % 5 = 2
+5 % 10 = 0.5
+"Java" + "Script" = "JavaScript"
+" " + " " = "  "
+" " + 0 = error
+true + true = true
+true + false =  false 
+false + true = false 
+false - true  = false 
+3 - 4  =  -1 
+"Bob" - "bill"  =  error 
+
+
+
